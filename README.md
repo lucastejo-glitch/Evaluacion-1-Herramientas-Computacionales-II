@@ -28,3 +28,20 @@ Los archivos de entrada se encuentran en la carpeta data/ los cuales se mantiene
   - Ancho de la sección (b): 0.2 m
   - Altura de la sección (h): 0.4 m
   - Moódulo de elasticidad (E): 25 GPa = 25 x 10^6 kN/m^2
+
+## 3. Instrucciones de Reproducibilidad
+Para reproducir el analisis paso a paso:
+1. Inercia y conversiones:
+   - Calcular el momento de inercia de la seccion rectangular.
+   - Convertir la elasticidad (E) a kN/m^2 (25 GPa = 25 x 10^6 kN/m^2) para mantener consistencia dimensional con la carga (P) en kN y L en m.
+  
+2. Cálculo de la Deflexión Teórica:
+   - Aplicar la ecuación de Euler-Bernoulli en el centro de la luz para las cargas de entrada
+   - Multiplicar el resultado por 1000 para obtener la deflexión teorica en mm.
+  
+3. Coomparación y Diferencia Relativa:
+   - Para cargas P > 0, calcular la diferencia relativa porcentual.
+  
+4. Visualización y Reporte:
+   - Abrir planilla -> analysis/analisis_viga.xlsx para verificar los valores calculados y el comportamiento teorico y medido de la viga.
+   - La figura -> figures/nota_tecnica.pdf se compila a partir de ->report/main.tex y -> report/referencias.bib
